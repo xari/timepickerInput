@@ -7,21 +7,25 @@
 #' @importFrom htmltools htmlDependency tags
 #'
 #' @export
-timepickerInput <- function(inputId, default = format(lubridate::now(),
-                                                      format="%H:%M")) {
+timepickerInput <- function(inputId,
+                            default = format(lubridate::now(), "%H:%M")) {
   reactR::createReactShinyInput(
     inputId,
-    "timepicker",
+    "timepicker form-control shiny-timepicker-input",
     htmltools::htmlDependency(
       name = "timepicker-input",
       version = "1.0.0",
       src = "www/timepickerInput/timepicker",
       package = "timepickerInput",
-      script = "timepicker.js"
+      script = "timepicker.js",
+      stylesheet = "custom.css"
     ),
     default,
-    list(),
-    htmltools::tags$span
+    list(disableClock = TRUE,
+         format = "HH:mm",
+         hourPlaceholder = "HH",
+         minutePlaceholder = "MM"),
+    htmltools::tags$div
   )
 }
 

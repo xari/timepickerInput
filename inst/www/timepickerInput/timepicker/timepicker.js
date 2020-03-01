@@ -6798,6 +6798,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var reactR__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(reactR__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_time_picker__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-time-picker */ "./node_modules/react-time-picker/dist/entry.js");
 /* harmony import */ var react_time_picker__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_time_picker__WEBPACK_IMPORTED_MODULE_1__);
+function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
 
 
 
@@ -6805,14 +6807,12 @@ var TimepickerInput = function TimepickerInput(_ref) {
   var configuration = _ref.configuration,
       value = _ref.value,
       setValue = _ref.setValue;
-  return React.createElement(react_time_picker__WEBPACK_IMPORTED_MODULE_1___default.a, {
-    disableClock: true,
-    format: "HH:mm",
+  return React.createElement(react_time_picker__WEBPACK_IMPORTED_MODULE_1___default.a, _extends({
     onChange: function onChange(newTime) {
       return setValue(newTime);
     },
     value: value
-  });
+  }, configuration));
 };
 
 Object(reactR__WEBPACK_IMPORTED_MODULE_0__["reactShinyInput"])('.timepicker', 'timepickerInput.timepicker', TimepickerInput);
