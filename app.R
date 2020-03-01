@@ -3,7 +3,11 @@ library(timepickerInput)
 
 ui <- fluidPage(
   titlePanel("reactR Input Example"),
-  timepickerInput("textInput"),
+  timepickerInput("textInput",
+                  configuration = list(disableClock = TRUE,
+                                       format = "HH:mm",
+                                       hourPlaceholder = "HH",
+                                       minutePlaceholder = "MM")),
   textOutput("textOutput")
 )
 

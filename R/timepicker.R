@@ -8,7 +8,8 @@
 #'
 #' @export
 timepickerInput <- function(inputId,
-                            default = format(lubridate::now(), "%H:%M")) {
+                            default = format(lubridate::now(), "%H:%M"),
+                            configuration = NULL) {
   reactR::createReactShinyInput(
     inputId,
     "timepicker form-control shiny-timepicker-input",
@@ -21,10 +22,7 @@ timepickerInput <- function(inputId,
       stylesheet = "custom.css"
     ),
     default,
-    list(disableClock = TRUE,
-         format = "HH:mm",
-         hourPlaceholder = "HH",
-         minutePlaceholder = "MM"),
+    configuration,
     htmltools::tags$div
   )
 }
