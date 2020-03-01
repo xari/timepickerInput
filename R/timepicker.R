@@ -7,7 +7,8 @@
 #' @importFrom htmltools htmlDependency tags
 #'
 #' @export
-timepickerInput <- function(inputId, default = lubridate::now()) {
+timepickerInput <- function(inputId, default = format(lubridate::now(),
+                                                      format="%H:%M")) {
   reactR::createReactShinyInput(
     inputId,
     "timepicker",

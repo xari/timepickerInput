@@ -4,7 +4,10 @@
 \alias{timepickerInput}
 \title{<Add Title>}
 \usage{
-timepickerInput(inputId, default = "")
+timepickerInput(
+  inputId,
+  default = format(lubridate::now(), format = "\%H:\%M")
+)
 }
 \description{
 <Add Description>
